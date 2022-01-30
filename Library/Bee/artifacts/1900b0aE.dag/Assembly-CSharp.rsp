@@ -351,6 +351,7 @@
 "Assets/_Game/Input/PlayerInputActions.cs"
 "Assets/_Game/Scripts/Character/CharacterAnimationController.cs"
 "Assets/_Game/Scripts/Character/MyCharacterController.cs"
+"Assets/_Game/Scripts/Game/GameController.cs"
 -langversion:9.0
 
 /deterministic

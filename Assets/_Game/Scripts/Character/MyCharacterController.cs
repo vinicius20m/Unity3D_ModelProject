@@ -31,6 +31,9 @@ public class MyCharacterController : MonoBehaviour
     bool dragg = false ;
     bool grounded = true ;
 
+    [SerializeField]Transform sprintPoint ;
+    [SerializeField]Transform originalPoint ;
+    CinemachineFreeLook freeLook ;
     PlayerInputActions pInput ;
     CharacterAnimationController pAnim ;
     CharacterController cController ;
@@ -63,7 +66,7 @@ public class MyCharacterController : MonoBehaviour
         pInput.GroundControls.Attack.performed += OnAttackInput ;
         pInput.GroundControls.Jump.performed += OnJumpInput ;
 
-        // Debug.Log(GameObject.Find("/Third Person Camera").GetComponent<CinemachineFreeLook>());
+        // freeLook =GameObject.Find("/Third Person Camera").GetComponent<CinemachineFreeLook>() ;
     }
 
     void Update()
@@ -121,9 +124,6 @@ public class MyCharacterController : MonoBehaviour
         move = grounded ? (new Vector3(directionInput.x, 0, directionInput.y).normalized * (run ? runSpeed : 1) * Sprint) : move ;
         move.y = yVelocity ;
         cController.Move(this.transform.TransformDirection(move  * speed * Time.deltaTime)) ;
-
-
-
     }
 
 //  FUNCTIONS/METHODS

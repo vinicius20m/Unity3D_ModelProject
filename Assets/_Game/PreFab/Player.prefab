@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &286184513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286184514}
+  m_Layer: 9
+  m_Name: SprintPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286184514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286184513}
+  m_LocalRotation: {x: -0.019327829, y: -0.019327845, z: 0.70684266, w: 0.70684254}
+  m_LocalPosition: {x: 0.141, y: -0, z: 0.286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3748994072107486478}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388631681
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +834,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 664654009574287749}
+  - {fileID: 286184514}
   m_Father: {fileID: 3753941987198145148}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1682,6 +1714,8 @@ MonoBehaviour:
   runSpeed: 2.5
   timeToPeak: 0.5
   maxHeight: 0.6
+  sprintPoint: {fileID: 286184514}
+  originalPoint: {fileID: 1388631682}
 --- !u!1 &3752366210917027252
 GameObject:
   m_ObjectHideFlags: 0

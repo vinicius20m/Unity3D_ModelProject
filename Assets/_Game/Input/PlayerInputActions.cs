@@ -293,6 +293,45 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GeneralControls"",
+            ""id"": ""c371adf0-52c6-46bc-a877-de5237ee8d96"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a4e3cbf-d4d1-4394-afe9-0029f044a647"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""80a2b1a3-053b-4acf-81e0-8e988d50d870"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse & Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""227c05e7-b215-423c-817a-253ba3208592"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -333,6 +372,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_GroundControls_Drag = m_GroundControls.FindAction("Drag", throwIfNotFound: true);
         m_GroundControls_Run = m_GroundControls.FindAction("Run", throwIfNotFound: true);
         m_GroundControls_Look = m_GroundControls.FindAction("Look", throwIfNotFound: true);
+        // GeneralControls
+        m_GeneralControls = asset.FindActionMap("GeneralControls", throwIfNotFound: true);
+        m_GeneralControls_Pause = m_GeneralControls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -461,6 +503,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         }
     }
     public GroundControlsActions @GroundControls => new GroundControlsActions(this);
+
+    // GeneralControls
+    private readonly InputActionMap m_GeneralControls;
+    private IGeneralControlsActions m_GeneralControlsActionsCallbackInterface;
+    private readonly InputAction m_GeneralControls_Pause;
+    public struct GeneralControlsActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public GeneralControlsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_GeneralControls_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_GeneralControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GeneralControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IGeneralControlsActions instance)
+        {
+            if (m_Wrapper.m_GeneralControlsActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_GeneralControlsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GeneralControlsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GeneralControlsActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_GeneralControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public GeneralControlsActions @GeneralControls => new GeneralControlsActions(this);
     private int m_MouseKeyboardSchemeIndex = -1;
     public InputControlScheme MouseKeyboardScheme
     {
@@ -487,5 +562,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnDrag(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+    }
+    public interface IGeneralControlsActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }
