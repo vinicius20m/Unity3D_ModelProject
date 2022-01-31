@@ -68,33 +68,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1568}
+      Script: {instanceID: 1594}
     - Class: 114
-      Script: {instanceID: 2256}
+      Script: {instanceID: 2282}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3304}
+      Script: {instanceID: 3330}
     - Class: 114
-      Script: {instanceID: 4038}
+      Script: {instanceID: 4064}
     - Class: 114
-      Script: {instanceID: 4512}
+      Script: {instanceID: 4538}
     - Class: 114
-      Script: {instanceID: 4810}
+      Script: {instanceID: 4836}
     - Class: 114
-      Script: {instanceID: 5636}
+      Script: {instanceID: 5662}
     - Class: 114
-      Script: {instanceID: 5932}
+      Script: {instanceID: 5958}
     - Class: 114
-      Script: {instanceID: 6280}
+      Script: {instanceID: 6306}
     - Class: 114
-      Script: {instanceID: 7254}
+      Script: {instanceID: 6946}
     - Class: 114
-      Script: {instanceID: 8026}
+      Script: {instanceID: 7282}
     - Class: 114
-      Script: {instanceID: 29128}
+      Script: {instanceID: 8054}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -134,6 +134,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -151,43 +153,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1568}
+      Script: {instanceID: 1594}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 1782}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2776}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 2926}
+      Script: {instanceID: 2952}
     - Class: 114
-      Script: {instanceID: 2984}
+      Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3088}
+      Script: {instanceID: 3114}
     - Class: 114
-      Script: {instanceID: 3304}
+      Script: {instanceID: 3330}
     - Class: 114
-      Script: {instanceID: 4038}
+      Script: {instanceID: 4064}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 5240}
     - Class: 114
-      Script: {instanceID: 5932}
+      Script: {instanceID: 5958}
     - Class: 114
-      Script: {instanceID: 6124}
+      Script: {instanceID: 6150}
     - Class: 114
-      Script: {instanceID: 6244}
+      Script: {instanceID: 6270}
     - Class: 114
-      Script: {instanceID: 6280}
+      Script: {instanceID: 6306}
     - Class: 114
-      Script: {instanceID: 7254}
+      Script: {instanceID: 6946}
     - Class: 114
-      Script: {instanceID: 8026}
+      Script: {instanceID: 7282}
     - Class: 114
-      Script: {instanceID: 8170}
+      Script: {instanceID: 8054}
     - Class: 114
-      Script: {instanceID: 29128}
+      Script: {instanceID: 8198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1137,6 +1139,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 4b2a675fc2c15d07237e3fa3374527ac
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
+  - hash:
+      serializedVersion: 2
       Hash: b02546fd00ac6dc2fae4119a1a3ace64
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1353,7 +1361,7 @@ ScriptsOnlyBuild:
     className: CinemachineStoryboard
   - hash:
       serializedVersion: 2
-      Hash: 09656c54f97f31da6e49fe36a49571c9
+      Hash: 41f6c87b975aa3e932b29ab518d27e0e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MyCharacterController
@@ -1465,12 +1473,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 4b2a675fc2c15d07237e3fa3374527ac
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameController
   platform: 19
   scenePathNames:
   - Assets/_Game/Scenes/MainMenu.unity
