@@ -10,10 +10,18 @@ using UnityEngine.InputSystem;
 public class MyCharacterController : MonoBehaviour
 {
 
+//  SERIALIZEBLE
+    [Header("Variables")]
     [SerializeField]float speed = 5 ;
     [SerializeField]float runSpeed = 1.70f ;
-    [SerializeField]float timeToPeak = 1f ;
-    [SerializeField]float maxHeight = 2f ;
+    [Header("Jump")]
+    [Range(0, 5)][SerializeField]float timeToPeak = 1f ;
+    [Range(0, 5)][SerializeField]float maxHeight = 2f ;
+    [Header("Camera")]
+    [SerializeField]Transform sprintPoint ;
+    [SerializeField]Transform originalPoint ;
+
+//  FLOAT
     float gravity ; 
     float jumpSpeed ;
     float yVelocity = 0 ;
@@ -27,30 +35,32 @@ public class MyCharacterController : MonoBehaviour
         private set{;}
     }
 
+//  BOOL
     bool draged = false ;
     bool dragg = false ;
     bool grounded = true ;
 
-    [SerializeField]Transform sprintPoint ;
-    [SerializeField]Transform originalPoint ;
+//
     CinemachineFreeLook freeLook ;
     PlayerInputActions pInput ;
     CharacterAnimationController pAnim ;
     CharacterController cController ;
 
-    private Vector2 directionInput = Vector2.zero ;
-    public Vector2 _directionInput
-    {
-        get{return directionInput;}
-        private set{;}
-    }
+//  VECTOR2
     Vector2 mousePos = Vector2.zero ;
     Vector2 rightStick = Vector2.zero ;
     Vector2 initialPos = Vector2.zero ;
     Vector2 res = Vector2.zero ;
     Vector2 res2 = Vector2.zero ;
     Vector2 res3 = Vector2.zero ;
+    private Vector2 directionInput = Vector2.zero ;
+    public Vector2 _directionInput
+    {
+        get{return directionInput;}
+        private set{;}
+    }
 
+//  VECTOR3
     Vector3 move = Vector3.zero ;
 
     private void Awake() {
